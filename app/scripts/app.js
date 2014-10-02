@@ -13,6 +13,8 @@ angular
     'ui.router',
     'ngResource',
     'avoscloud',
+    'angular-loading-bar',
+    'ngAnimate',
     'app.controllers'
   ])
   .config(['$stateProvider', '$urlRouterProvider', 'avoscloudProvider', function($stateProvider, $urlRouterProvider, avoscloudProvider) {
@@ -26,5 +28,10 @@ angular
           url: '/',
           templateUrl: 'views/welcome.html',
           controller: 'WelcomeController'
-        });
+        })
+        .state('home', {
+          url: '/home',
+          templateUrl: 'views/home.html',
+          controller: 'HomeController'
+        })
   }]);

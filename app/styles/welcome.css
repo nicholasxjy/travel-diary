@@ -51,6 +51,8 @@ body {
     padding-left: 15px;
     position: absolute;
     bottom: 60px;
+    left: 50%;
+    margin-left: -288px;
 }
 .login-wrap {
     position: absolute;
