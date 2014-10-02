@@ -49,20 +49,25 @@
             <div class="auth-form-wrap col-md-6 col-md-offset-3">
                 <div class="auth-form-inner">
                     <form novalidate name="signupForm" class="form-inline" ng-submit="signUp(user)">
-                        <div class="form-group">
+                        <div class="form-group" data-container="body" data-toggle="popover" data-placement="top"
+                        data-content="username length must be between 6 and 20!">
                             <label id="username" class="sr-only">Username</label>
                             <input type="text" ng-model="user.name" class="form-control" placeholder="Username"
-                                   ng-maxlength="20" ng-minlength="6" required name="name">
+                                   ng-maxlength="20" ng-minlength="6" required name="name"
+                                   tip-show>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" data-toggle="popover" data-placement="top"
+                        data-content="Enter a valid email">
                             <label id="email" class="sr-only">Email</label>
                             <input type="email" ng-model="user.email" class="form-control" placeholder="Email Address"
-                                    name="email" required ng-pattern="/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))$/i">
+                                    name="email" required ng-pattern="/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))$/i"
+                                    tip-show>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" data-toggle="popover" data-placement="top"
+                        data-content="password length should be between 6 and 30!">
                             <label id="password" class="sr-only">Password</label>
-                            <input type="password" ng-model="user.password" class="form-control" placeholder="Password"
-                                    name="password" required ng-maxlength="30" ng-minlength="6">
+                            <input type="password" ng-model="user.password" class="form-control" placeholder="Password" name="password" required ng-maxlength="30" ng-minlength="6"
+                            tip-show>
                         </div>
                         <button class="btn btn-primary btn-signup" type="submit" ng-disabled="signupForm.$invalid">Sign Up</button>
                     </form>

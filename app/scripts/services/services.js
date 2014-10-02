@@ -5,7 +5,6 @@ var app = angular.module('app.services', []);
 
 app.factory('UserService', ['$q','avoscloud', function($q, avoscloud) {
     var userService = {};
-    console.log(avoscloud);
     userService.signUp = function(userinfo) {
         var defer = $q.defer();
         avoscloud.users.save({}, {
