@@ -32,6 +32,7 @@ app.controller('LoginController', function($scope, ngDialog, UserService, $state
     $scope.login = function(userinfo) {
         UserService.login(userinfo).then(function(res){
             if (res.status === 'success') {
+                ngDialog.close('ngdialog1');
                 $state.go('home');
             }
         }, function(err) {
@@ -52,3 +53,8 @@ app.controller('HomeController', function($scope) {
     'use strict';
 
 });
+
+
+app.controller('PostController', function($scope) {
+
+})

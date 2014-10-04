@@ -15,6 +15,7 @@ angular
     'avoscloud',
     'angular-loading-bar',
     'ngAnimate',
+    'angular-medium-editor',
     'app.controllers'
   ])
   .config(['$stateProvider', '$urlRouterProvider', 'avoscloudProvider', function($stateProvider, $urlRouterProvider, avoscloudProvider) {
@@ -34,4 +35,9 @@ angular
           templateUrl: 'views/home.html',
           controller: 'HomeController'
         })
+         .state('post', {
+             url: '/post',
+             templateUrl: 'views/post.html',
+             controller: 'PostController'
+         })
   }]);
