@@ -56,5 +56,9 @@ app.controller('HomeController', function($scope) {
 
 
 app.controller('PostController', function($scope) {
-
+    'use strict';
+    $scope.submitFeed = function(feed) {
+        console.log(feed.title);
+        console.log(feed.description);
+    }
 })
