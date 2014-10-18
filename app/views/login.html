@@ -1,5 +1,5 @@
 <div class="td-section td-login-section">
-	<div class="login-form-wrap">
+	<div class="login-form-wrap animated zoomIn">
 		<div class="close-wrap">
 			<a ui-sref="welcome" class="fa fa-times"></a>
 		</div>
@@ -16,7 +16,7 @@
 					<input type="password" class="form-control login-field" ng-model="user.password" placeholder="Your Password">
 					<label for="login-password" class="login-field-icon fa fa-unlock-alt"></label>
 				</div>
-				<button class="btn btn-block btn-success">Login</button>
+				<a class="btn btn-block btn-success" ui-sref="home">Login</a>
 			</form>
 		</div>
 		<a ui-sref="/forgetpass" class="forget-link">Forget Password?</a>

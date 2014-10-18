@@ -35,4 +35,9 @@ angular
           templateUrl: 'views/login.html',
           controller: 'LoginController'
         })
+        .state('home', {
+          url: '/home',
+          templateUrl: 'views/home.html',
+          controller: 'HomeController'
+        })
   }]);
