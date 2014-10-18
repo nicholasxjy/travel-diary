@@ -1,0 +1,117 @@
+body {
+	background-image: url(../images/bg_travel.jpg);
+	background-size: cover;
+}
+.auth-wrap {
+	position: relative;
+	width: 660px;
+	height: 460px;
+	margin: 100px auto;
+	background-image: url(../images/auth-form-bg.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	overflow: hidden;
+	border-radius: 6px;
+	color: #ffffff;
+	text-align: center;
+	box-shadow: 0 -5px 8px rgba(0,0,0,.3);
+}
+.td-content {
+	margin-top: 20px;
+	clear:both;
+}
+.signup-wrap {
+	float: right;
+	margin-top: 15px;
+	margin-right: 15px;
+}
+.td-title h1 {
+	font-size: 30px;
+	font-weight: 400;
+}
+.td-subtitle {
+	font-size: 24px;
+	font-weight: 400;
+}
+.td-subcontent {
+	font-size: 20px;
+	font-weight: 300;
+}
+.td-authform-wrap {
+	padding: 30px 180px;
+}
+.td-authform-wrap input {
+	border-color: transparent;
+}
+.forget-link {
+	padding-top: 10px;
+	font-size: 14px;
+	font-weight: 300;
+	font-style: italic;
+	color: #bdc3c7;
+	text-decoration: underline;
+}
+
+.login-form-wrap {
+	width: 270px;
+	background-color: #edeff1;
+	border-radius: 4px;
+	margin: 100px auto;
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 10px;
+}
+.login-form .login-field-icon {
+	top: 12px;
+}
+.login-form .login-field {
+	font-size: 14px;
+}
+.close-wrap {
+	float: right;
+	width: 40px;
+	height: 40px;
+	margin-top: -20px;
+	font-size: 20px;
+}
+.close-wrap a {
+	color: #34495E;
+}
+.login-top-banner {
+	position: relative;
+	height: 70px;
+	margin-bottom: 15px;
+}
+.login-top-banner img {
+	width: 60px;
+	height: 60px;
+	border:2px solid #ffffff;
+	position: absolute;
+	top: 5px;
+	left: 50%;
+	margin-left: -25px;
+}
+.other-auth-login {
+	margin-top: 15px;
+}
+.other-auth-title {
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+.third-auth-item {
+	display: block;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	line-height: 40px;
+}
+.third-auth-weibo {
+	background-color: #E74C3C;
+}
+.third-auth-qq {
+	background-color: #3498DB;
+}
+.third-auth-weixin {
+	background-color: #2ECC71;
+}

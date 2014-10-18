@@ -1,6 +1,7 @@
 var app = angular.module('app.controllers', ['ngDialog', 'app.services', 'ui.router']);
 app.controller('WelcomeController',['$scope', 'ngDialog', 'UserService', '$state', function($scope, ngDialog, UserService, $state){
     'use strict';
+    $scope.bodyclass = "welcome-body";
     $scope.showLoginModal = function() {
         ngDialog.open({
             template: 'views/partials/loginform.html',

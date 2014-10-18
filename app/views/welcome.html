@@ -1,139 +1,29 @@
-<section class="header">
-	<div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="brand">
-                    Travel Diary
-                </div>
-            </div>
-            <nav class="navbar-middle col-md-4">
-                <ul class="list-inline">
-                    <li class="nav-item">
-                        <a href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#introduction">Introduction</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#author">Author</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="col-md-4 right-social">
-                <ul class="list-inline">
-                    <li class="social-item">
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                    </li>
-                    <li class="social-item">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                    </li>
-                    <li class="social-item">
-                        <a href="#"><i class="fa fa-github"></i></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-		<div class="header-info">
-			<h2>You have the design, you have the code</h2>
-			<p>We've created the product that will help </p>
-			<p>your startup to look even better.</p>
+<div class="section td-section welcome-section">
+	<div class="auth-wrap">
+		<div class="signup-wrap">
+			<a ui-sref="login" class="btn btn-default">Login</a>
 		</div>
-		<div class="header-video">
-			
-		</div>
-		<div class="row">
-            <div class="auth-form-wrap col-md-6 col-md-offset-3">
-                <div class="auth-form-inner">
-                    <form novalidate name="signupForm" class="form-inline" ng-submit="signUp(user)">
-                        <div class="form-group" data-container="body" data-toggle="popover" data-placement="top"
-                        data-content="username length must be between 6 and 20!">
-                            <label id="username" class="sr-only">Username</label>
-                            <input type="text" ng-model="user.name" class="form-control" placeholder="Username"
-                                   ng-maxlength="20" ng-minlength="6" required name="name"
-                                   tip-show>
-                        </div>
-                        <div class="form-group" data-toggle="popover" data-placement="top"
-                        data-content="Enter a valid email">
-                            <label id="email" class="sr-only">Email</label>
-                            <input type="email" ng-model="user.email" class="form-control" placeholder="Email Address"
-                                    name="email" required ng-pattern="/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))$/i"
-                                    tip-show>
-                        </div>
-                        <div class="form-group" data-toggle="popover" data-placement="top"
-                        data-content="password length should be between 6 and 30!">
-                            <label id="password" class="sr-only">Password</label>
-                            <input type="password" ng-model="user.password" class="form-control" placeholder="Password" name="password" required ng-maxlength="30" ng-minlength="6"
-                            tip-show>
-                        </div>
-                        <button class="btn btn-primary btn-signup" type="submit" ng-disabled="signupForm.$invalid">Sign Up</button>
-                    </form>
-                </div>
-                <div class="login-wrap">
-                    <p>Already have an account?&nbsp;&nbsp;<a ng-click="showLoginModal()">Login</a></p>
-                </div>
-            </div>
+		<div class="td-content">
+			<div class="td-title">
+				<h1>Showfie</h1>
+			</div>
+			<div class="td-subtitle">
+				They used to Pinterest plan a dream trip.
+			</div>
+			<div class="td-subcontent">
+				Join Showfie to show the best and beautiful that inspire others.
+			</div>
+			<div class="td-authform-wrap">
+				<form novalidate name="signUpForm">
+					<div class="form-group">
+						<input type="email" class="form-control" ng-model="user.email" placeholder="Email">
+					</div>
+					<div class="form-group">
+						<input type="password" class="form-control" ng-model="user.password" placeholder="Password">
+					</div>
+					<button class="btn btn-primary btn-block" type="submit">Sign Up</button>
+				</form>
+			</div>
 		</div>
 	</div>
-</section>
-<section class="intro">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 demo-info">
-               <h6>With the success of young-adult book-to-movie</h6>
-                <p>
-                    Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
-                </p>
-                <p>
-                    Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
-                </p>
-                <p>
-                    Do you like this freebie? Want to get more stuff like this?
-                    Subscribe to designmodo news and updates to stay tuned on great designs.
-                    Go to: designmodo.com/flat-free
-                    Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
-                </p>
-                <p>
-                    Do you like this freebie? Want to get more stuff like this?
-                    Subscribe to designmodo news and updates to stay tuned on great designs.
-                    Go to: designmodo.com/flat-free
-                </p>
-            </div>
-            <div class="col-md-6 demo-picture">
-                <img src="../images/img-123.jpg" alt="intro" class="img-responsive"/>
-                <img src="../images/image11.jpg" alt="intro" class="img-responsive"/>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 about-me">
-                <img src="../images/default.png" alt="Nicholas Xue" class="img-responsive img-circle"/>
-                <p>A normal geek who has a big dream and also a very funny handsome man!</p>
-                <div class="myemail"><a href="mailto:yitaqi2011@gmail.com">yitaqi2011@gmail.com</a></div>
-            </div>
-            <div class="col-md-6 contact-me">
-                <ul class="list-inline">
-                    <li class="social-item">
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                    </li>
-                    <li class="social-item">
-                        <a href="#"><i class="fa fa-facebook-square"></i></a>
-                    </li>
-                    <li class="social-item">
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-                    </li>
-                </ul>
-                <p>Friend me on wechat: </p>
-                <div class="qrcode">
-                    <img src="../images/qrcode.png" alt="" class="img-responsive img-rounded"/>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+</div>

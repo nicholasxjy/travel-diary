@@ -30,14 +30,9 @@ angular
           templateUrl: 'views/welcome.html',
           controller: 'WelcomeController'
         })
-        .state('home', {
-          url: '/home',
-          templateUrl: 'views/home.html',
-          controller: 'HomeController'
+        .state('login', {
+          url: '/login',
+          templateUrl: 'views/login.html',
+          controller: 'LoginController'
         })
-         .state('post', {
-             url: '/post',
-             templateUrl: 'views/post.html',
-             controller: 'PostController'
-         })
   }]);
