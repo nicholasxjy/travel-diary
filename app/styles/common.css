@@ -1,3 +1,17 @@
+.dropdown-caret {
+	position: absolute;
+	width: 0;
+	height: 0;
+	top: -9px;
+	left: 70%;
+	border-bottom: 10px solid #f3f4f5;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+}
+.dropdown-caret.caret-left {
+	left: 20%;
+}
+
 .td-section {
 	position: relative;
 	width: 100%;
@@ -5,6 +19,7 @@
 .td-navbar {
 	border-radius: 0;
 	max-height: 53px;
+	margin-bottom: 0;
 }
 .td-navbar a {
 	cursor: pointer;
@@ -41,4 +56,41 @@
 	color: #E74C3C;
 	text-align: center;
 	margin-top: 15px;
+}
+.notification-dropdown li {
+	float: left;
+}
+.notifiction-item {
+	float: left;
+	width: 250px;
+	padding: 8px 10px 8px 10px;
+}
+.user-avatar-wrap {
+	float: left;
+	width: 50px;
+	margin-top: 4px;
+}
+.notification-content-wrap {
+	float: left;
+	width: 180px;
+}
+.notifiction-item img {
+	width: 40px;
+	height: 40px;
+}
+.notification-info {
+	padding-right: 12px;
+}
+.notification-info a, .notification-info span {
+	font-size: 12px;
+	color: #2C3E50;
+}
+.notification-content {
+	height: 20px;
+	font-size: 12px;
+	font-weight: 300;
+	line-height: 18px;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
 }
