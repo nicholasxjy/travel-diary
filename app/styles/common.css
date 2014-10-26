@@ -14,15 +14,18 @@ body {
 .dropdown-caret.caret-left {
 	left: 20%;
 }
-
+.navbar-brand {
+	height: 64px;
+}
 .td-section {
 	position: relative;
 	width: 100%;
 }
-.td-navbar {
+.td-navbar.navbar {
 	border-radius: 0;
-	max-height: 53px;
+	min-height: 64px;
 	margin-bottom: 0;
+	background: #ffffff;
 }
 .td-navbar a {
 	cursor: pointer;
@@ -32,33 +35,57 @@ body {
 	font-weight: 300;
 	font-style: italic;
 	color: #E74C3C;
+	line-height: 64px;
+	padding-top: 0;
+	padding-bottom: 0;
 }
 .td-navbar-list {
-	margin-left: 50px;
+	margin-left: 90px;
 }
-.td-navbar-list li.nav-list-item a {
+.td-navbar-list li.nav-list-item a.navbar-link {
+	height: 64px;
+	line-height: 64px;
+	padding-top: 0;
+	padding-bottom: 0;
 	font-size: 14px;
-	font-weight: 300;
+	font-weight: 400;
+}
+.navbar-nav > li > .dropdown-menu {
+	margin-top: 3px;
 }
 .nav-user-avatar {
 	width: 25px;
 	height: 25px;
 }
 .navbar-nav > li > a.user-setting-toggle {
-	padding-top: 15px;
-	padding-bottom: 10px;
+	height: 64px;
+	line-height: 64px;
+	padding-top: 20px;
+}
+.navbar-nav > li > a.user-setting-toggle:hover {
+	animation: pulse 1s;
+	-webkit-animation: pulse 1s;
 }
 .navbar-nav > li > a.post-btn {
 	display: block;
-	width: 25px;
-	height: 25px;
-	line-height: 25px;
 	border: 1px solid #E74C3C;
-	border-radius: 50%;
-	padding: 0;
+	border-radius: 5px;
 	color: #E74C3C;
 	text-align: center;
-	margin-top: 15px;
+	padding: 2px 15px;
+	margin-top: 17px;
+	font-size: 14px;
+	font-weight: 400;
+	-webkit-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+}
+.navbar-nav > li > a.post-btn:hover {
+	background-color: #E74C3C;
+	color: #ffffff;
+	animation: tada 1s;
+	-webkit-animation: tada 1s;
 }
 .notification-dropdown li {
 	float: left;
