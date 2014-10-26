@@ -1,6 +1,9 @@
 body {
 	font-family: 'Roboto', sans-serif;
 }
+.td-container {
+	margin-top: 64px;
+}
 .dropdown-caret {
 	position: absolute;
 	width: 0;
@@ -26,6 +29,11 @@ body {
 	min-height: 64px;
 	margin-bottom: 0;
 	background: #ffffff;
+	box-shadow: 0 2px 4px rgba(0,0,0,.2);
+	-webkit-box-shadow: 0 2px 4px rgba(0, 0,0,.2);
+	-webkit-transform: translateZ(10px);
+	transform: translateZ(10px);
+	border-bottom: 1px solid rgba(0,0,0, 0.5);
 }
 .td-navbar a {
 	cursor: pointer;
@@ -54,13 +62,20 @@ body {
 	margin-top: 3px;
 }
 .nav-user-avatar {
-	width: 25px;
-	height: 25px;
+	width: 34px;
+	height: 34px;
 }
 .navbar-nav > li > a.user-setting-toggle {
 	height: 64px;
 	line-height: 64px;
-	padding-top: 20px;
+	padding-top: 15px;
+}
+.navbar-link .badge {
+	background-color: #E74C3C;
+	color: #ffffff;
+	padding: 3px 5px;
+	animation: pulse 1s infinite;
+	-webkit-animation: pulse 1s infinite;
 }
 .navbar-nav > li > a.user-setting-toggle:hover {
 	animation: pulse 1s;
@@ -90,10 +105,35 @@ body {
 .notification-dropdown li {
 	float: left;
 }
-.notifiction-item {
+.notification-item {
 	float: left;
 	width: 250px;
 	padding: 8px 10px 8px 10px;
+	border-top: 1px solid #BDC3C7;
+}
+.notification-inner-top {
+	padding: 8px 10px;
+	font-weight: 300;
+}
+.notification-inner-top i {
+	float: right;
+	padding-top: 5px;
+	padding-right: 10px;
+	color: #E74C3C;
+}
+.notification-inner-bottom {
+	float: left;
+	width: 100%;
+	padding: 8px 10px;
+	text-align: center;
+	border-top: 1px solid #BDC3C7;
+}
+.notification-inner-bottom a {
+	font-size: 14px;
+	font-weight: 300;
+	font-style: italic;
+	color: #BDC3C7;
+	text-decoration: underline;
 }
 .user-avatar-wrap {
 	float: left;
@@ -104,7 +144,7 @@ body {
 	float: left;
 	width: 180px;
 }
-.notifiction-item img {
+.notification-item img {
 	width: 40px;
 	height: 40px;
 }
@@ -123,4 +163,57 @@ body {
 	overflow: hidden;
 	text-overflow:ellipsis;
 	white-space:nowrap;
+}
+.user-dropdown-link span {
+	font-size: 12px;
+	font-weight: 300;
+	color: #BDC3C7;
+}
+
+.create-feed-wrap {
+	margin-top: 25px;
+}
+.create-feed-top textarea {
+	width: 90%;
+	height: 100px;
+	border: none;
+	background-color: #ffffff;
+	border-radius: 4px;
+	outline: none;
+	color: #34495E;
+	font-size: 14px;
+	font-weight: 400;
+	padding-top: 8px;
+}
+.attach-list li {
+	padding-right: 15px;
+}
+.attach-list li a{
+	font-size: 14px;
+	font-weight: 500;
+	color: #34495E;
+}
+.attach-list li a i {
+	font-size: 18px;
+	padding-right: 5px;
+}
+.attach-list li a i.fa-camera {
+	color: #3498DB;
+}
+.attach-list li a i.fa-link {
+	color: #F1C40F;
+}
+.attach-list li a i.fa-video-camera {
+	color: #E74C3C;
+}
+.post-feed-btn {
+	font-size: 14px;
+	padding-left: 35px;
+	padding-right: 35px;
+	margin-right: 24px;
+}
+.cancel-feed-btn {
+	font-size: 14px;
+	padding-left: 28px;
+	padding-right: 28px;
 }

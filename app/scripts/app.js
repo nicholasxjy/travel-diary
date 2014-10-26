@@ -35,6 +35,11 @@ angular
           templateUrl: 'views/login.html',
           controller: 'LoginController'
         })
+        .state('forgetpass', {
+          url: '/forgetpass',
+          templateUrl: 'views/partials/forgetpass.html',
+          controller: 'ForgetpassController'
+        })
         .state('home', {
           url: '/home',
           templateUrl: 'views/home.html',

@@ -62,13 +62,23 @@
 }
 .user-card-bottom ul li {
 	padding-top: 5px;
+	padding-bottom: 5px;
 	height: 100%;
 	width: 30%;
 }
 .user-card-bottom ul li a {
 	display: block;
 	height: 100%;
-	font-size: 14px;
+	font-size: 12px;
 	font-weight: 400;
 	color: #34495E;
+	transition: color 0.3s ease-in-out;
+	-webkit-transition: color 0.3s ease-in-out;
+}
+.user-card-bottom ul li a:hover {
+	color: #E74C3C;
+}
+.user-card-bottom ul li:nth-child(2) {
+	border-left: 1px solid #ECF0F1;
+	border-right: 1px solid #ECF0F1;
 }

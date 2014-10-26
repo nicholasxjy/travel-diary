@@ -1,0 +1,19 @@
+<div class="td-section td-login-section">
+	<div class="login-form-wrap animated bounceInDown">
+		<div class="close-wrap">
+			<a ui-sref="login" class="fa fa-times"></a>
+		</div>
+		<div class="forget-tip">
+			Forget your password?
+		</div>
+		<div class="form-inner">
+			<form novalidate name="forgetForm" class="login-form">
+				<div class="form-group">
+					<input type="email" class="form-control login-field" ng-model="user.email" placeholder="Your Email">
+					<label for="login-email" class="login-field-icon fa fa-envelope"></label>
+				</div>
+				<a class="btn btn-block btn-success" ui-sref="home">Submit</a>
+			</form>
+		</div>
+	</div>
+</div>

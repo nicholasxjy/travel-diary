@@ -8,7 +8,7 @@ body {
 	width: 660px;
 	height: 460px;
 	margin: 100px auto;
-	background-image: url(../images/auth-form-bg.jpg);
+	background-image: url(../images/bg-auth.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	overflow: hidden;
@@ -115,6 +115,13 @@ body {
 }
 .third-auth-weixin {
 	background-color: #2ECC71;
+}
+
+.forget-tip {
+	margin-top: 8px;
+	font-size: 16px;
+	font-weight: 300;
+	color: #95A5A6;
 }
 
 .feed-wrap {

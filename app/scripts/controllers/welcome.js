@@ -42,24 +42,21 @@ app.controller('LoginController', function($scope, ngDialog, UserService, $state
     }
 });
 
-app.controller('ForgetController', function($scope, ngDialog) {
+app.controller('ForgetpassController', function($scope, ngDialog) {
    'use strict';
-    $scope.closeForgetPassModal = function() {
-        ngDialog.close('ngdialog1');
-    };
-});
-
-
-app.controller('HomeController', function($scope) {
-    'use strict';
 
 });
 
 
-app.controller('PostController', function($scope) {
-    'use strict';
-    $scope.submitFeed = function(feed) {
-        console.log(feed.title);
-        console.log(feed.description);
+app.controller('HomeController', function($scope, ngDialog) {
+    $scope.createNewFeed = function () {
+        ngDialog.open({
+            template: 'views/partials/create-new-feed.html',
+            controller: 'CreateNewFeedController'
+        })
     }
+});
+
+app.controller('CreateNewFeedController', function($scope, ngDialog) {
+
 })
