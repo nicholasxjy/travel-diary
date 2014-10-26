@@ -14,17 +14,18 @@
 	padding: 15px;
 }
 .name-wrap {
+	margin-top: 10px;
 	font-size: 20px;
 	font-weight: 400;
 	line-height: 24px;
 }
 .avatar-wrap {
-	height: 90px;
+	height: 100px;
 	position: relative;
 }
 .avatar-wrap img {
-	width: 80px;
-	height: 80px;
+	width: 90px;
+	height: 90px;
 	border: 5px solid #ffffff;
 	position: absolute;
 	left: 50%;
@@ -33,31 +34,36 @@
 }
 .gender-location {
 	margin-top: 8px;
-	font-size: 12px;
-	font-weight: 500;
+	font-size: 16px;
+	font-weight: 300;
 }
 .gender-location .fa-user {
 	font-size: 16px;
 	color: #3498DB;
-	padding-right: 5px;
+	padding-right: 10px;
 }
 .gender-location .fa-map-marker {
 	font-size: 16px;
 	color: #E74C3C;
-	padding-right: 5px;
+	padding-left: 15px;
+	padding-right: 10px;
 }
 .profile {
 	margin-top: 8px;
 	font-size: 14px;
 	font-weight: 300;
 	line-height: 18px;
+	padding-left: 30px;
+	padding-right: 30px;
 }
 .user-card-bottom ul {
 	padding: 0;
 	margin: 0;
 }
 .user-card-bottom ul li {
+	padding-top: 5px;
 	height: 100%;
+	width: 30%;
 }
 .user-card-bottom ul li a {
 	display: block;

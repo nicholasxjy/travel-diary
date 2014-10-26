@@ -1,7 +1,7 @@
 body {
 /*	background-image: url(../images/bg_travel.jpg);
 	background-size: cover;*/
-	background-color: #e9e9e9;
+	background-color: #34495E;
 }
 .auth-wrap {
 	position: relative;
@@ -118,17 +118,19 @@ body {
 }
 
 .feed-wrap {
-	float: left;
-	margin: 10px; 
+	margin-top: 20px; 
 	border-radius: 5px;
 	background-color: #ffffff;
 }
 .feed-inner {
-	float: left;
 	padding-bottom: 15px;
 }
 .feed-content-wrap {
 	padding: 10px 10px 15px 10px;
+}
+.photo-wrap {
+	padding-left: 10px;
+	padding-right: 10px;
 }
 .author-wrap {
 	position: relative;
@@ -159,32 +161,33 @@ body {
 	padding-left: 5px;
 }
 .like-comment-wrap {
-	float: left;
+	width: 100%;
 	margin-top: 5px;
 	padding-left: 8px;
 }
 .like-inner {
-	float: left;
+	padding-left: 10px;
 }
 .like-inner a {
 	color: #34495e;
 }
-.like-count {
+.like-inner a.comment-link {
+	padding-left: 15px;
+}
+.like-count, .comment-count {
 	font-size: 12px;
 	padding-left: 5px;
 }
-.like-inner ul {
-	width: 170px;
-	float: right;
-	padding-left: 50px;
+.like-comment-wrap ul {
+	padding-right: 15px;
 	padding-top: 4px;
 	margin-bottom: 0;
 
 }
-.like-inner ul li {
+.like-comment-wrap ul li {
 	padding-left: 0;
 }
-.like-inner li img {
+.like-comment-wrap li img {
 	width: 24px;
 	height: 24px;
 	border: 1px solid #ffffff;
