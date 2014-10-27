@@ -22,12 +22,23 @@
 					</ul>
 				</div>
 				<div class="row attach-wrap">
-					<input type="file" ng-file-select="onFileSelect($files)" multiple accept="image/*">
+					<label for="image-upload">
+						<img src="images/drop-file.png" alt="" class="img-responsive">
+					</label>
+					<input id="image-upload" type="file" ng-file-select="onFileSelect($files)" multiple accept="image/*" class="td-file-input">
+					<div ng-file-drop="onFileSelect($files)" ng-file-drag-over-class="drag-file-wrap" class="drop-files-container"></div>
+					<div class="thumbnail-wrap" ng-show="selectedFiles != null">
+						<ul class="list-inline">
+							<li ng-repeat="f in selectedFiles">
+								<img ng-src="{{dataUrls[$index]}}" alt="" ng-show="dataUrls[$index]" class="img-responsive img-rounded">
+							</li>
+						</ul>
+					</div>
 				</div>
-				<div class="row attach-wrap">
-					<div video-dropzone id="video-upload"></div>
+				<div class="row attach-wrap" ng-show="isAddVideo">
+					<div id="video-upload"></div>
 				</div>
-				<div class="row attach-wrap">
+				<div class="row attach-wrap" ng-show="isAddLink">
 					<div class="dropzone-wrap" id="link-upload"></div>
 				</div>
 				<div class="row">

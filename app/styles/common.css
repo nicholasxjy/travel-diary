@@ -217,3 +217,11 @@ body {
 	padding-left: 28px;
 	padding-right: 28px;
 }
+.attach-wrap img {
+	width: 368px;
+	height: 176px;
+}
+input.td-file-input {
+	display: none;
+}
+
