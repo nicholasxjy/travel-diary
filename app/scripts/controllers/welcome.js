@@ -1,5 +1,5 @@
-var app = angular.module('app.controllers', ['ngDialog', 'app.services', 'ui.router']);
-app.controller('WelcomeController',['$scope', 'ngDialog', 'UserService', '$state', function($scope, ngDialog, UserService, $state){
+var app = angular.module('app.controllers', ['ngDialog', 'app.services', 'ui.router', 'app.directives']);
+app.controller('WelcomeController',['$scope', 'ngDialog', '$state', function($scope, ngDialog, $state){
     'use strict';
     $scope.bodyclass = "welcome-body";
     $scope.showLoginModal = function() {
@@ -9,19 +9,9 @@ app.controller('WelcomeController',['$scope', 'ngDialog', 'UserService', '$state
         });
     };
 
-    $scope.signUp = function(user) {
-        UserService.signUp(user).then(function(res) {
-            if (res.status === 'success') {
-                $state.go('home');
-            }
-            console.log(res);
-        }, function(err) {
-            console.log("Sign up Error: ", err);
-        });
-    }
 }]);
 
-app.controller('LoginController', function($scope, ngDialog, UserService, $state) {
+app.controller('LoginController', function($scope, ngDialog, $state) {
    'use strict';
     $scope.showForgetPassModal = function() {
         ngDialog.close('ngdialog1');
@@ -31,14 +21,8 @@ app.controller('LoginController', function($scope, ngDialog, UserService, $state
         });
     };
     $scope.login = function(userinfo) {
-        UserService.login(userinfo).then(function(res){
-            if (res.status === 'success') {
-                ngDialog.close('ngdialog1');
-                $state.go('home');
-            }
-        }, function(err) {
-            console.log("Login Error: ", err);
-        });
+        ngDialog.close('ngdialog1');
+        $state.go('home');
     }
 });
 
@@ -56,7 +40,10 @@ app.controller('HomeController', function($scope, ngDialog) {
         })
     }
 });
+app.controller('CreateNewFeedController', ['$scope', '$upload', function($scope, $upload) {
+    $scope.onFileSelect = function($files) {
+        $scope.dataUrls = [];
+        
+    }
+}])
 
-app.controller('CreateNewFeedController', function($scope, ngDialog) {
-
-})

@@ -11,18 +11,13 @@
 angular
   .module('travelDiaryApp', [
     'ui.router',
-    'ngResource',
-    'avoscloud',
     'angular-loading-bar',
     'ngAnimate',
+    'angularFileUpload',
     'angular-medium-editor',
     'app.controllers'
   ])
-  .config(['$stateProvider', '$urlRouterProvider', 'avoscloudProvider', function($stateProvider, $urlRouterProvider, avoscloudProvider) {
-     avoscloudProvider.config({
-      'X-AVOSCloud-Application-Id': 'n5kqlr9jl2xu4lw5ewn4zib9kx02iqxbo20gqr36soo8qrem',
-      'X-AVOSCloud-Application-Key': '5upx5pwbr2u49wsgztcjauvwkzot1e9oe18mmioqm1hy3pkl'
-    });
+  .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
      $urlRouterProvider.otherwise('/');
      $stateProvider
         .state('welcome', {
