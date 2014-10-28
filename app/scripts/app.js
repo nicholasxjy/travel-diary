@@ -40,4 +40,9 @@ angular
           templateUrl: 'views/home.html',
           controller: 'HomeController'
         })
+        .state('user', {
+          url: '/user/:id',
+          templateUrl: 'views/user.html',
+          controller: 'UserController'
+        })
   }]);

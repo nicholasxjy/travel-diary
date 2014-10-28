@@ -60,5 +60,9 @@ app.controller('CreateNewFeedController', ['$scope', '$upload','$timeout', funct
             }
         }
     }
+}]);
+
+app.controller('UserController', ['$scope', function($scope) {
+    
 }])
 
