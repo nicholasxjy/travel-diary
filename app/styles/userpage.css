@@ -9,6 +9,20 @@ body {
 	height: 450px;
 	width: 100%;
 }
+.banner-blur-wrap	{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 450px;
+	width: 100%;
+	opacity: 0;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+}
+.banner-blur-wrap img {
+	height: 450px;
+	width: 100%;
+}
 .top-action-wrap {
 	position: absolute;
 	top: 0;
@@ -88,4 +102,50 @@ body {
 	font-weight: 300;
 	line-height: 26px;
 	color: #BDC3C7;
+}
+.user-divider {
+	position: relative;
+	margin-top: 50px;
+	text-align: center;
+}
+.user-divider:before {
+	display: block;
+	content: "";
+	width: 100%;
+	top: 17px;
+	position: absolute;
+	border-bottom: 1px solid #ccc;
+}
+.user-divider a {
+	display: inline-block;
+	background-color: #ffffff;
+	padding: 3px 10px;
+	border: 1px solid #ccc;
+	font-size: 13px;
+	font-weight: 300;
+	color: #34495E;
+	position: relative;
+	text-transform: uppercase;
+}
+.user-feeds-wrap {
+	padding-left: 100px;
+	padding-right: 100px;
+}
+
+.user-feed-item {
+	position: relative;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+.user-feed-item:last-child {
+	border-bottom: none;
+}
+.user-photo-wrap img {
+	height: 140px;
+}
+.content-wrap {
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-bottom: 15px;
+	color: #7F8C8D;
 }
