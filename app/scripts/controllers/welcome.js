@@ -64,5 +64,9 @@ app.controller('CreateNewFeedController', ['$scope', '$upload','$timeout', funct
 
 app.controller('UserController', ['$scope', function($scope) {
     
+}]);
+
+app.controller('SettingsController', ['$scope', function($scope) {
+    
 }])
 

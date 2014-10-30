@@ -40,6 +40,11 @@ angular
           templateUrl: 'views/home.html',
           controller: 'HomeController'
         })
+        .state('settings', {
+          url: '/setttings',
+          templateUrl: 'views/settings.html',
+          controller: 'SettingsController'
+        })
         .state('user', {
           url: '/user/:id',
           templateUrl: 'views/user.html',
