@@ -45,6 +45,16 @@ angular
           templateUrl: 'views/settings.html',
           controller: 'SettingsController'
         })
+        .state('settings.avatar', {
+          url: '/avatar',
+          templateUrl: 'views/settings.avatar.html',
+          controller: 'SetAvtarController'
+        })
+        .state('settings.password', {
+          url: '/reset-password',
+          templateUrl: 'views/settings.password.html',
+          controller: 'SetPassController'
+        })
         .state('user', {
           url: '/user/:id',
           templateUrl: 'views/user.html',
