@@ -41,18 +41,21 @@ angular
           controller: 'HomeController'
         })
         .state('settings', {
-          url: '/setttings',
           templateUrl: 'views/settings.html',
-          controller: 'SettingsController'
+        })
+        .state('settings.profile', {
+          url: '/settings/profile',
+          templateUrl: 'views/partials/settings.profile.html',
+          controller: 'SetProfileController'
         })
         .state('settings.avatar', {
-          url: '/avatar',
-          templateUrl: 'views/settings.avatar.html',
+          url: '/settings/avatar',
+          templateUrl: 'views/partials/settings.avatar.html',
           controller: 'SetAvtarController'
         })
         .state('settings.password', {
-          url: '/reset-password',
-          templateUrl: 'views/settings.password.html',
+          url: '/settings/reset-password',
+          templateUrl: 'views/partials/settings.password.html',
           controller: 'SetPassController'
         })
         .state('user', {

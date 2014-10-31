@@ -66,7 +66,14 @@ app.controller('UserController', ['$scope', function($scope) {
     
 }]);
 
-app.controller('SettingsController', ['$scope', function($scope) {
+app.controller('SetProfileController', ['$scope', function($scope) {
     
+}]);
+app.controller('SetAvatarController', ['$scope', function($scope) {
+
+}]);
+
+app.controller('SetPassController', ['$scope', function($scope) {
+
 }])
 
