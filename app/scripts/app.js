@@ -59,8 +59,21 @@ angular
           controller: 'SetPassController'
         })
         .state('user', {
-          url: '/user/:id',
+          url: '/user',
           templateUrl: 'views/user.html',
-          controller: 'UserController'
+        })
+        .state('user.posts', {
+          url: '/:id',
+          templateUrl: 'views/partials/user.posts.html'
+        })
+        .state('user.followers', {
+          url:'/:id/followers',
+          templateUrl: 'views/partials/user.followers.html',
+          controller: 'FollowersController'
+        })
+        .state('user.followings', {
+          url:'/:id/followings',
+          templateUrl: 'views/partials/user.followings.html',
+          controller: 'FollowingsController'
         })
   }]);

@@ -63,17 +63,25 @@ app.controller('CreateNewFeedController', ['$scope', '$upload','$timeout', funct
 }]);
 
 app.controller('UserController', ['$scope', function($scope) {
-    
+
 }]);
 
 app.controller('SetProfileController', ['$scope', function($scope) {
-    
+
 }]);
 app.controller('SetAvatarController', ['$scope', function($scope) {
 
 }]);
 
 app.controller('SetPassController', ['$scope', function($scope) {
+
+}]);
+
+app.controller('FollowersController', ['$scope', function($scope) {
+
+}]);
+
+app.controller('FollowingsController', ['$scope', function($scope) {
 
 }])
 
