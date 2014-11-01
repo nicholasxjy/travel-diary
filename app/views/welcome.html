@@ -14,16 +14,28 @@
 				Join Showfie to show the best and beautiful that inspire others.
 			</div>
 			<div class="td-authform-wrap">
-				<form novalidate name="signUpForm">
+				<form novalidate name="signUpForm" ng-submit="submitSignUpForm(user)">
+				<div class="form-group">
+					<input type="text" class="form-control" ng-model="user.username"
+					placeholder="Username" ng-minlength="6" ng-maxlength="20" required>
+				</div>
 					<div class="form-group">
-						<input type="email" class="form-control" ng-model="user.email" placeholder="Email">
+						<input type="email" class="form-control" ng-model="user.email"
+						placeholder="Email" required>
 					</div>
 					<div class="form-group">
-						<input type="password" class="form-control" ng-model="user.password" placeholder="Password">
+						<input type="password" class="form-control" ng-model="user.password"
+						placeholder="Password" ng-minlength="6" ng-maxlength="30" required>
 					</div>
-					<button class="btn btn-primary btn-block" type="submit">Sign Up</button>
+					<button class="btn btn-primary btn-block" type="submit"
+					ng-disabled="signUpForm.$invalid">
+						Sign Up
+					</button>
+					<p class="td-error animated" ng-class="{'zoomIn': hasError}"
+					>{{errorMessage}}</p>
 				</form>
 			</div>
 		</div>
 	</div>
+	<div ng-include="'views/partials/spinner.html'"></div>
 </div>

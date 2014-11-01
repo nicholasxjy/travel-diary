@@ -21,7 +21,7 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/flat-ui.css">
-    <link href='http://fonts.googleapis.com/css?family=Roboto:500,300,400' rel='stylesheet' type='text/css'>
+<!--     <link href='http://fonts.googleapis.com/css?family=Roboto:500,300,400' rel='stylesheet' type='text/css'> -->
     <link rel="stylesheet" href="styles/common.css">
     <link rel="stylesheet" href="styles/td-custom.css">
     <link rel="stylesheet" href="styles/user-card.css">
@@ -79,10 +79,24 @@
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/lib/av.js"></script>
-        <script src="scripts/app.js"></script>
         <script src="scripts/services/services.js"></script>
-        <script src="scripts/controllers/welcome.js"></script>
+        <script src="scripts/services/user_service.js"></script>
+
+        <script src="scripts/controllers/controllers.js"></script>
+        <script src="scripts/controllers/welcome_controller.js"></script>
+        <script src="scripts/controllers/home_controller.js"></script>
+        <script src="scripts/controllers/login_controller.js"></script>
+        <script src="scripts/controllers/user_controller.js"></script>
+        <script src="scripts/controllers/setprofile_controller.js"></script>
+        <script src="scripts/controllers/setavatar_controller.js"></script>
+        <script src="scripts/controllers/setpass_controller.js"></script>
+        <script src="scripts/controllers/forgetpass_controller.js"></script>
+        <script src="scripts/controllers/followers_controller.js"></script>
+        <script src="scripts/controllers/followings_controller.js"></script>
+        <script src="scripts/controllers/createfeed_controller.js"></script>
+
         <script src="scripts/directives/directives.js"></script>
+        <script src="scripts/app.js"></script>
         <!-- endbuild -->
 </body>
 </html>

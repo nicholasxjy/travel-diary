@@ -15,8 +15,21 @@ angular
     'ngAnimate',
     'angularFileUpload',
     'angular-medium-editor',
-    'app.controllers'
+    'app.controllers',
+    'app.services',
+    'app.directives'
   ])
+  .constant('AVOSCLOUD_CONFIG', {
+    APPID: '3ekks4tku18g807f8q8nbatpp7rfgso6c4cod450q8tkwt3g',
+    APPKEY: 'lsyme1jam9a80m8zcjdnxbd232869klbn0uplpei402ptitq'
+  })
+  .run(function(AVOSCLOUD_CONFIG) {
+    if (!AV) {
+      throw new Error('no avoscloud yet!')
+      return;
+    }
+    AV.initialize(AVOSCLOUD_CONFIG.APPID, AVOSCLOUD_CONFIG.APPKEY);
+  })
   .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
      $urlRouterProvider.otherwise('/');
      $stateProvider
@@ -64,7 +77,8 @@ angular
         })
         .state('user.posts', {
           url: '/:id',
-          templateUrl: 'views/partials/user.posts.html'
+          templateUrl: 'views/partials/user.posts.html',
+          controller: 'UserController'
         })
         .state('user.followers', {
           url:'/:id/followers',
