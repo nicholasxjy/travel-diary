@@ -20,7 +20,7 @@
                         if (user) {
                             $timeout(function() {
                                 $scope.spinnerShow = false;
-                                $scope.$emit('user:signup', user);
+                                // $scope.$emit('user:signup', user);
                                 $state.go('home');
                             })
                         }

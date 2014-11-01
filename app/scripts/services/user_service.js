@@ -19,6 +19,10 @@
         user.set('username', info.username);
         user.set('password', info.password);
         user.set('email', info.email);
+        //this info set to be default when new user sign up
+        user.set('location', 'other');
+        user.set('gender', 'secret');
+        user.set('profile', 'No profile yet!');
         user.signUp(null, {
           success: function(user) {
             deferred.resolve(user);

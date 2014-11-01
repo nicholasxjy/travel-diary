@@ -2,18 +2,18 @@
 	<div class="user-card-inner">
 		<div class="user-card-top">
 			<div class="avatar-wrap">
-				<img src="images/default.jpg" alt="user avatar" class="img-responsive img-circle">
+				<img ng-src="{{currentUser.avatar}}" alt="user avatar" class="img-responsive img-circle">
 			</div>
 			<div class="name-wrap">
-				Nicholas Xue
+				{{currentUser.username}}
 			</div>
 			<div class="user-info-wrap">
 				<div class="gender-location">
-					<i class="fa fa-user"></i><span>Male</span>
-					<i class="fa fa-map-marker"></i><span>NYC</span>
+					<i class="fa fa-user"></i><span>{{currentUser.gender}}</span>
+					<i class="fa fa-map-marker"></i><span>{{currentUser.location}}</span>
 				</div>
 				<div class="profile">
-					A normal geek also a fucking handsome and funny guy!
+					{{currentUser.profile}}
 				</div>
 			</div>
 		</div>

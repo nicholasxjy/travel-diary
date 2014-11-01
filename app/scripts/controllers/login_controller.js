@@ -25,7 +25,7 @@
                 .then(function(user) {
                   $timeout(function() {
                     $scope.spinnerShow = false;
-                    $scope.$emit('user:login', user);
+                    // $scope.$emit('user:login', user);
                     $state.go('home');
                   }, 2000);
                 }, function(error) {

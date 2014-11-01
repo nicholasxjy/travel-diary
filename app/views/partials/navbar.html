@@ -11,10 +11,10 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav td-navbar-list">
         <li class="nav-list-item">
-        	<a ui-sref="user" class="navbar-link">Me</a>
+        	<a href="#/user/{{currentUser.id}}" class="navbar-link">Me</a>
         </li>
         <li class="nav-list-item">
-        	<a href="#" class="navbar-link">Gallery</a>
+        	<a href="#/user/{{currentUser.id}}/gallery" class="navbar-link">Gallery</a>
         </li>
         <li class="dropdown nav-list-item">
           <a class="dropdown-toggle navbar-link" data-toggle="dropdown">Messages <span class="badge animated">0</span></a>
@@ -73,7 +73,7 @@
       	  	</div>
       	    <li>
               <a href="#" class="user-dropdown-link">
-                <b>Nicholas Xue</b><br>
+                <b>{{currentUser.username}}</b><br>
                 <span>View profile</span>
               </a>
             </li>
@@ -82,7 +82,7 @@
               <a ui-sref="settings.profile">Settings</a>
             </li>
       	    <li class="divider"></li>
-      	    <li><a href="#">Logout</a></li>
+      	    <li><a ng-click="logOut()">Logout</a></li>
       	  </ul>
       	</li>
         <li>
