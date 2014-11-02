@@ -6,10 +6,17 @@
             '$scope',
             '$upload',
             '$timeout',
+            'UserService',
+            'FeedService',
             createCtrl
         ]);
 
-        function createCtrl($scope, $upload, $timeout) {
+        function createCtrl($scope, $upload, $timeout, UserService, FeedService) {
+          UserService.currentUser()
+            .then(function(user) {
+              $scope.currentUser = user;
+            });
+
           $scope.fileReaderSupported =
           window.FileReader != null
           &&
@@ -33,6 +40,22 @@
                       }(fileReader, i);
                   }
               }
+          }
+
+          $scope.submitFeedForm = function(feed) {
+            $scope.spinnerShow = true;
+            var feedInfo = {
+              content: feed.content,
+              files: $scope.selectedFiles
+            };
+            FeedService.create(feedInfo)
+              .then(function() {
+                $scope.spinnerShow = false;
+                alert('Yes, make it!');
+              }, function(error) {
+                $scope.spinnerShow = false;
+                alert('not cool:' + error);
+              })
           }
         }
 })();

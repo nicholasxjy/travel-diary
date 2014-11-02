@@ -7,13 +7,18 @@
 			Forget your password?
 		</div>
 		<div class="form-inner">
-			<form novalidate name="forgetForm" class="login-form">
+			<form novalidate name="forgetForm" class="login-form"
+			ng-submit="submitforgetForm(user)">
 				<div class="form-group">
-					<input type="email" class="form-control login-field" ng-model="user.email" placeholder="Your Email">
+					<input type="email" class="form-control login-field"
+					ng-model="user.email" placeholder="Your Email" required>
 					<label for="login-email" class="login-field-icon fa fa-envelope"></label>
 				</div>
-				<a class="btn btn-block btn-success" ui-sref="home">Submit</a>
+				<button class="btn btn-block btn-success"
+				type="submit" ng-disabled="forgetForm.$invalid">Submit</button>
+				<p class="td-error animated" ng-class="{'zoomIn': hasError}">{{errorMessage}}</p>
 			</form>
 		</div>
 	</div>
+	<div ng-include="'views/partials/spinner.html'"></div>
 </div>

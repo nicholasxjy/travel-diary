@@ -67,11 +67,6 @@ angular
           templateUrl: 'views/partials/settings.avatar.html',
           controller: 'SetAvtarController'
         })
-        .state('settings.password', {
-          url: '/settings/reset-password',
-          templateUrl: 'views/partials/settings.password.html',
-          controller: 'SetPassController'
-        })
         .state('user', {
           url: '/user',
           templateUrl: 'views/user.html',

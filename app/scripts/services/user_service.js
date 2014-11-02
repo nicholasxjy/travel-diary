@@ -11,6 +11,7 @@
         logIn: logIn,
         updateInfo: updateUserInfo,
         currentUser: currentUser,
+        requestPasswordReset: requestPasswordReset,
         logOut: logOut
       };
       return userService;
@@ -87,6 +88,19 @@
             } else {
               deferred.reject('find user error after updating');
             }
+          }
+        });
+        return deferred.promise;
+      }
+
+      function requestPasswordReset(info) {
+        var deferred = $q.defer();
+        AV.User.requestPasswordReset(info.email, {
+          success: function() {
+            deferred.resolve('requestPasswordReset accepted!');
+          },
+          error: function(error) {
+            deferred.reject(error.message);
           }
         });
         return deferred.promise;

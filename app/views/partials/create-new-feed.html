@@ -1,51 +1,54 @@
 <div class="create-feed-wrap">
 	<div class="create-feed-inner">
 		<div class="create-feed-top row">
-			<div class="col-md-2">
-				<img src="images/default.jpg" alt="" class="img-responsive img-circle">
-			</div>
-			<div class="col-md-10">
-				<div class="row">
-					<textarea placeholder="share what's new..."></textarea>
+			<form novalidate name="feedForm" ng-submit="submitFeedForm(feed)">
+				<div class="col-md-2">
+					<img ng-src="{{currentUser.avatar}}" alt="" class="img-responsive img-circle">
 				</div>
-				<div class="row">
-					<ul class="list-inline attach-list">
-						<li>
-							<a href="#" ng-click="showPhoto()"><i class="fa fa-camera"></i>photos</a>
-						</li>
-						<li>
-							<a href="#" ng-click="showLink()"><i class="fa fa-link"></i>link</a>
-						</li>
-						<li>
-							<a href="#" ng-click="showVideo()"><i class="fa fa-video-camera"></i>video</a>
-						</li>
-					</ul>
-				</div>
-				<div class="row attach-wrap">
-					<label for="image-upload">
-						<img src="images/drop-file.png" alt="" class="img-responsive">
-					</label>
-					<input id="image-upload" type="file" ng-file-select="onFileSelect($files)" multiple accept="image/*" class="td-file-input">
-					<div ng-file-drop="onFileSelect($files)" ng-file-drag-over-class="drag-file-wrap" class="drop-files-container"></div>
-					<div class="thumbnail-wrap" ng-show="selectedFiles != null">
-						<ul class="list-inline">
-							<li ng-repeat="f in selectedFiles">
-								<img ng-src="{{dataUrls[$index]}}" alt="" ng-show="dataUrls[$index]" class="img-responsive img-rounded">
+				<div class="col-md-10">
+					<div class="row">
+						<textarea placeholder="share what's new..." ng-model="feed.content" required></textarea>
+					</div>
+					<div class="row">
+						<ul class="list-inline attach-list">
+							<li>
+								<a href="#" ng-click="showPhoto()"><i class="fa fa-camera"></i>photos</a>
+							</li>
+							<li>
+								<a href="#" ng-click="showLink()"><i class="fa fa-link"></i>link</a>
+							</li>
+							<li>
+								<a href="#" ng-click="showVideo()"><i class="fa fa-video-camera"></i>video</a>
 							</li>
 						</ul>
 					</div>
+					<div class="row attach-wrap">
+						<label for="image-upload">
+							<img src="images/drop-file.png" alt="" class="img-responsive">
+						</label>
+						<input id="image-upload" type="file" ng-file-select="onFileSelect($files)" accept="image/*" class="td-file-input" ng-model="feed.files">
+						<div class="thumbnail-wrap" ng-show="selectedFiles != null">
+							<ul class="list-inline">
+								<li ng-repeat="f in selectedFiles">
+									<img ng-src="{{dataUrls[$index]}}" alt="" ng-show="dataUrls[$index]" class="img-responsive img-rounded">
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="row attach-wrap" ng-show="isAddVideo">
+						<div id="video-upload"></div>
+					</div>
+					<div class="row attach-wrap" ng-show="isAddLink">
+						<div class="dropzone-wrap" id="link-upload"></div>
+					</div>
+					<div class="row">
+						<button class="btn btn-success post-feed-btn" type="submit"
+						ng-disabled="feedForm.$invalid">Post</button>
+						<button class="btn btn-default cancel-feed-btn">Cancel</button>
+					</div>
 				</div>
-				<div class="row attach-wrap" ng-show="isAddVideo">
-					<div id="video-upload"></div>
-				</div>
-				<div class="row attach-wrap" ng-show="isAddLink">
-					<div class="dropzone-wrap" id="link-upload"></div>
-				</div>
-				<div class="row">
-					<button class="btn btn-success post-feed-btn">Post</button>
-					<button class="btn btn-default cancel-feed-btn">Cancel</button>
-				</div>
-			</div>
+			</form>
 		</div>
 	</div>
+	<div ng-include="'views/partials/spinner.html'"></div>
 </div>

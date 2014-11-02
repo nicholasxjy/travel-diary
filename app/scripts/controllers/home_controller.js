@@ -21,6 +21,11 @@
             .then(function(user) {
               $scope.currentUser = user;
             });
+
+          $scope.logOut = function() {
+            UserService.logOut();
+            $state.go('welcome');
+          }
         }
 
 
