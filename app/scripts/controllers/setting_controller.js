@@ -9,7 +9,10 @@
         ]);
 
         function setCtrl($scope, UserService) {
-            $scope.currentUser = UserService.currentUser();;
+            UserService.currentUser()
+                .then(function(user) {
+                    $scope.currentUser = user;
+                });
             $scope.$on('user:update', function(evt, user) {
                 $scope.currentUser = user;
             });

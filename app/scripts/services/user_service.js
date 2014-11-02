@@ -50,8 +50,20 @@
       }
 
       function currentUser() {
-        var user = AV.User.current()
-        return getCurrentUser(user);
+        var deferred = $q.defer();
+        var user = AV.User.current();
+        var query = new AV.Query(AV.User);
+        query.equalTo('objectId', user.objectId);
+        query.find({
+          success: function(users) {
+            if (users && users.length > 0) {
+              deferred.resolve(getCurrentUser(users[0]));
+            } else {
+              deferred.reject('find cuser after updating error.');
+            }
+          }
+        });
+        return deferred.promise;
       }
 
       function logOut() {

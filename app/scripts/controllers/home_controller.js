@@ -17,7 +17,10 @@
                   controller: 'CreateNewFeedController'
               });
           };
-          $scope.currentUser = UserService.currentUser();
+          UserService.currentUser()
+            .then(function(user) {
+              $scope.currentUser = user;
+            });
         }
 
 

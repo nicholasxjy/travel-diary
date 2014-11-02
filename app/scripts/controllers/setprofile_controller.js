@@ -10,7 +10,10 @@
         ]);
 
         function setProfileCtrl($scope, $state, UserService) {
-            $scope.cUser = UserService.currentUser();
+            UserService.currentUser()
+                .then(function(user) {
+                    $scope.cUser = user;
+                });
             $scope.submitProfileForm = function(userInfo) {
                 UserService.updateInfo(userInfo)
                     .then(function(newUser) {
