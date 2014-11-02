@@ -2,18 +2,21 @@
 	<div class="setting-title-wrap">
 		<h4>Setting your profile</h4>
 	</div>
-	<form novalidate name="profileForm" class="form-horizontal" role="form">
+	<form novalidate name="profileForm" class="form-horizontal" role="form"
+	ng-submit="submitProfileForm(cUser)">
 		<div class="form-group">
 			<label for="username" class="col-sm-2 control-label">Username</label>
 			<div class="col-sm-10">
-				<input type="text" class="form-control" value="Nicholas Xue" readonly="true">
+				<input type="text" class="form-control" ng-model="cUser.username"
+				readonly="true">
 				<p>This cannot be edited!</p>
 			</div>
 		</div>
 		<div class="form-group">
 			<label for="email" class="col-sm-2 control-label">Email</label>
 			<div class="col-sm-10">
-				<input type="text" class="form-control" value="yitaqi2011@gmail.com" readonly="true">
+				<input type="text" class="form-control" ng-model="cUser.email"
+				readonly="true">
 				<p>We promise there is no spam!</p>
 			</div>
 		</div>
@@ -21,7 +24,8 @@
 			<label class="col-sm-2 control-label">Gender</label>
 			<div class="col-sm-10">
 				<label class="radio">
-					<input type="radio" value="male" ng-model="user.gender" class="custom-radio">
+					<input type="radio" value="male" ng-model="cUser.gender"
+					class="custom-radio" checked="cUser.gender==='male'">
 					<span class="icons">
 						<span class="icon-unchecked"></span>
 						<span class="icon-checked"></span>
@@ -29,21 +33,46 @@
 					Male
 				</label>
 				<label class="radio">
-					<input type="radio" value="female" ng-model="user.gender" class="custom-radio">
+					<input type="radio" value="female" ng-model="cUser.gender"
+					class="custom-radio" checked="cUser.gender==='female'">
 					<span class="icons">
 						<span class="icon-unchecked"></span>
 						<span class="icon-checked"></span>
 					</span>
 					Female
 				</label>
+				<label class="radio">
+					<input type="radio" value="secret" ng-model="cUser.gender"
+					class="custom-radio" checked="cUser.gender==='secret'">
+					<span class="icons">
+						<span class="icon-unchecked"></span>
+						<span class="icon-checked"></span>
+					</span>
+					Secret
+				</label>
 			</div>
 		</div>
 		<div class="form-group">
 			<label class="col-sm-2 control-label">Location</label>
 			<div class="col-sm-10">
-				<input type="text" class="form-control" value="NYC">
+				<input type="text" ng-model="cUser.location" class="form-control"
+				required>
 				<p>Tell us where you are now.</p>
 			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Profile</label>
+			<div class="col-sm-10">
+				<textarea ng-model="cUser.profile" class="form-control" cols="3"
+				required>
+					{{cUser.profile}}
+				</textarea>
+				<p>Tell us about you.</p>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2"></label>
+			<button class="btn btn-info" type="Save" ng-disabled="profileForm.$invalid">Save</button>
 		</div>
 	</form>
 </div>

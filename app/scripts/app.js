@@ -55,6 +55,7 @@ angular
         })
         .state('settings', {
           templateUrl: 'views/settings.html',
+          controller: 'SettingController'
         })
         .state('settings.profile', {
           url: '/settings/profile',

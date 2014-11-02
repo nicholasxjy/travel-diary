@@ -4,12 +4,21 @@
         .module('app.controllers')
         .controller('SetProfileController', [
             '$scope',
-            'ngDialog',
             '$state',
+            'UserService',
             setProfileCtrl
         ]);
 
-        function setProfileCtrl($scope, ngDialog, $state) {
-
+        function setProfileCtrl($scope, $state, UserService) {
+            $scope.cUser = UserService.currentUser();
+            $scope.submitProfileForm = function(userInfo) {
+                UserService.updateInfo(userInfo)
+                    .then(function(newUser) {
+                        $scope.cUser = newUser;
+                        $scope.$emit('user:update', newUser);
+                    }, function(error) {
+                        alert(error);
+                    });
+            }
         }
 })();

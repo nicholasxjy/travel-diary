@@ -9,6 +9,7 @@
       var userService = {
         signUp: signUp,
         logIn: logIn,
+        updateInfo: updateUserInfo,
         currentUser: currentUser,
         logOut: logOut
       };
@@ -25,7 +26,8 @@
         user.set('profile', 'No profile yet!');
         user.signUp(null, {
           success: function(user) {
-            deferred.resolve(user);
+
+            deferred.resolve(getCurrentUser(user));
           },
           error: function(user, error) {
             deferred.reject(error.message);
@@ -38,7 +40,7 @@
         var deferred = $q.defer();
         AV.User.logIn(info.username, info.password, {
           success: function(user) {
-            deferred.resolve(user);
+            deferred.resolve(getCurrentUser(user));
           },
           error: function(user, error) {
             deferred.reject(error.message);
@@ -48,11 +50,48 @@
       }
 
       function currentUser() {
-        return AV.User.current();
+        var user = AV.User.current()
+        return getCurrentUser(user);
       }
 
       function logOut() {
         AV.User.logOut();
+      }
+
+      function updateUserInfo(info) {
+        var deferred = $q.defer();
+        var user = AV.User.current();
+        user.fetchWhenSave(true);
+        user.set('gender', info.gender);
+        user.set('location', info.location);
+        user.set('profile', info.profile);
+        user.save();
+        var query = new AV.Query(AV.User);
+        query.equalTo('username', info.username);
+        query.find({
+          success: function(users) {
+            if (users && users.length > 0) {
+              deferred.resolve(getCurrentUser(users[0]));
+            } else {
+              deferred.reject('find user error after updating');
+            }
+          }
+        });
+        return deferred.promise;
+      }
+
+      function getCurrentUser(user) {
+        var cUser = {
+          id: user.id,
+          username: user.attributes.username,
+          email: user.attributes.email,
+          createdAt: user.createdAt,
+          gender: user.attributes.gender,
+          location: user.attributes.location,
+          profile: user.attributes.profile,
+          avatar: user.attributes.avatar || 'images/default.jpg'
+        };
+        return cUser;
       }
     }]);
  })();
