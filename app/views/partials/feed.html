@@ -4,19 +4,24 @@
 		<div class="feed-content-wrap">
 			<div class="author-wrap">
 				<div class="author-avatar-wrap">
-					<img src="images/default.jpg" alt="author avatar" class="img-responsive img-circle">
+					<img ng-src="{{feed.author.avatar || 'images/default.jpg'}}" alt="author avatar" class="img-responsive img-circle">
 				</div>
 				<div class="author-name-wrap">
-					<div class="author-name">Nicholas</div>
-					<div class="post-time">3d ago</div>
+					<div class="author-name">{{feed.author.username}}</div>
+					<div class="post-time">{{feed.feed.createdAt}}</div>
 				</div>
 			</div>
 			<div class="feed-content">
-				Wow!!!This is pretty awesome, dude.
+				{{feed.feed.content}}
 			</div>
 		</div>
-		<div class="photo-wrap">
-			<img src="images/demo.jpg" alt="post photo" class="img-responsive">
+		<div class="photo-wrap" ng-if="feed.feed.photo">
+			<img ng-src="{{feed.feed.photo.url}}" alt="{{feed.feed.photo.name}}" class="img-responsive">
+		</div>
+		<div class="video-wrap" ng-if="feed.feed.video">
+			<videogular vg-theme="feed.feed.config.theme">
+				<vg-video vg-src="feed.feed.config.sources"></vg-video>
+			</videogular>
 		</div>
 		<div class="like-comment-wrap">
 			<div class="row">

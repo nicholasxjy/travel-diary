@@ -6,8 +6,9 @@
 				<div ng-include="'views/partials/user-card.html'"></div>
 			</div>
 			<div class="col-md-6">
-				<div ng-include="'views/partials/feed.html'"></div>
-				<div ng-include="'views/partials/feed.html'"></div>
+				<div ng-repeat="feed in feeds">
+					<div ng-include="'views/partials/feed.html'"></div>
+				</div>
 			</div>
 			<div class="col-md-2"></div>
 		</div>

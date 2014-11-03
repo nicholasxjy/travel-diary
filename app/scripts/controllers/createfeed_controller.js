@@ -8,10 +8,11 @@
             '$timeout',
             'UserService',
             'FeedService',
+            'ngDialog',
             createCtrl
         ]);
 
-        function createCtrl($scope, $upload, $timeout, UserService, FeedService) {
+        function createCtrl($scope, $upload, $timeout, UserService, FeedService, ngDialog) {
           UserService.currentUser()
             .then(function(user) {
               $scope.currentUser = user;
@@ -44,6 +45,7 @@
 
           $scope.submitFeedForm = function(feed) {
             $scope.spinnerShow = true;
+            console.log($scope.selectedFiles);
             var feedInfo = {
               content: feed.content,
               files: $scope.selectedFiles
@@ -51,7 +53,8 @@
             FeedService.create(feedInfo)
               .then(function() {
                 $scope.spinnerShow = false;
-                alert('Yes, make it!');
+                ngDialog.close('ngdialog1');
+                $scope.$emit('feed:new');
               }, function(error) {
                 $scope.spinnerShow = false;
                 alert('not cool:' + error);

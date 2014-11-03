@@ -26,7 +26,7 @@
 						<label for="image-upload">
 							<img src="images/drop-file.png" alt="" class="img-responsive">
 						</label>
-						<input id="image-upload" type="file" ng-file-select="onFileSelect($files)" accept="image/*" class="td-file-input" ng-model="feed.files">
+						<input id="image-upload" type="file" ng-file-select="onFileSelect($files)" class="td-file-input" ng-model="feed.files">
 						<div class="thumbnail-wrap" ng-show="selectedFiles != null">
 							<ul class="list-inline">
 								<li ng-repeat="f in selectedFiles">

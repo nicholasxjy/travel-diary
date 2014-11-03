@@ -22,7 +22,9 @@
     "medium-editor": "1.8.*",
     "animate-css": "~3.2.0",
     "ng-file-upload": "~1.6.12",
-    "moment": "~2.8.3"
+    "moment": "~2.8.3",
+    "videogular": "~0.6.3",
+    "videogular-themes-default": "~0.6.3"
   },
   "devDependencies": {
     "angular-mocks": "~1.2.0",

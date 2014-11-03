@@ -3,7 +3,8 @@
     .module('app.services')
     .factory('FeedService', ['$http', '$q', function($http, $q) {
       var feedService = {
-        create: create
+        create: create,
+        findAllFeed: findAllFeed
       };
       return feedService;
 
@@ -20,7 +21,13 @@
             var name = file.name;
             var avFile = new AV.File(name, file);
             avFile.save().then(function() {
-              feed.set('photo', avFile);
+              if (file.type.indexOf('video') > -1) {
+                feed.set('video', avFile);
+              }
+              if (file.type.indexOf('image') > -1) {
+                feed.set('photo', avFile);
+              }
+
               feed.save(null, {
                 success: function(newFeed) {
                   deferred.resolve(newFeed);
@@ -43,6 +50,27 @@
             }
           });
         }
+        return deferred.promise;
+      }
+
+      function findAllFeed(currentPage) {
+        var deferred = $q.defer();
+        var Feed = AV.Object.extend('Feed');
+        var query = new AV.Query(Feed);
+        var page = currentPage || 1;
+        var skip = (page - 1)*10;
+        query.limit(10);
+        query.skip(skip);
+        query.descending('createdAt');
+        query.include('author');
+        query.find({
+          success: function(feeds) {
+            deferred.resolve(feeds);
+          },
+          error: function(error) {
+            deferred.reject(error.message);
+          }
+        });
         return deferred.promise;
       }
     }]);
