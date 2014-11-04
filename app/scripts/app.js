@@ -13,6 +13,8 @@ angular
     'ui.router',
     'angular-loading-bar',
     'ngAnimate',
+    'com.2fdevs.videogular',
+    'com.2fdevs.videogular.plugins.controls',
     'angularFileUpload',
     'angular-medium-editor',
     'app.controllers',

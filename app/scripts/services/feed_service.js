@@ -27,7 +27,7 @@
               if (file.type.indexOf('image') > -1) {
                 feed.set('photo', avFile);
               }
-
+              console.log('file upload ok');
               feed.save(null, {
                 success: function(newFeed) {
                   deferred.resolve(newFeed);
