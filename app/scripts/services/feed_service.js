@@ -27,7 +27,9 @@
               if (file.type.indexOf('image') > -1) {
                 feed.set('photo', avFile);
               }
-              console.log('file upload ok');
+              if (file.type.indexOf('audio') > -1) {
+                feed.set('audio', avFile);
+              }
               feed.save(null, {
                 success: function(newFeed) {
                   deferred.resolve(newFeed);

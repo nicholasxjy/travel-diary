@@ -43,7 +43,6 @@
                   var feedInfo = {};
                   feedInfo.author = feed.get('author').toJSON();
                   feedInfo.feed = feed.toJSON();
-                  console.log(feedInfo.feed);
                   if (feedInfo.feed.video) {
                     feedInfo.feed.video.config = {
                       theme: {
@@ -53,6 +52,17 @@
                         {src: $sce.trustAsResourceUrl(feedInfo.feed.video.url), type: 'video/mp4'},
                         {src: $sce.trustAsResourceUrl(feedInfo.feed.video.url), type: 'video/webm'},
                         {src: $sce.trustAsResourceUrl(feedInfo.feed.video.url), type: 'video/ogg'}
+                      ]
+                    }
+                  }
+                  if (feedInfo.feed.audio) {
+                    feedInfo.feed.audio.config = {
+                      theme: {
+                        url: 'bower_components/videogular-themes-default/videogular.css'
+                      },
+                      sources: [
+                        {src: $sce.trustAsResourceUrl(feedInfo.feed.audio.url), type: "audio/mpeg"},
+                        {src: $sce.trustAsResourceUrl(feedInfo.feed.audio.url), type: "audio/ogg"},
                       ]
                     }
                   }
