@@ -1,4 +1,3 @@
-
 <div class="feed-wrap">
 	<div class="feed-inner">
 		<div class="feed-content-wrap">
@@ -23,7 +22,6 @@
 				<vg-video vg-src="feed.feed.video.config.sources"></vg-video>
 				<vg-controls>
 					<vg-play-pause-button></vg-play-pause-button>
-					<vg-timedisplay>{{ currentTime | date:'mm:ss' }}</vg-timedisplay>
 					<vg-scrubBar>
 						<vg-scrubbarcurrenttime></vg-scrubbarcurrenttime>
 					</vg-scrubBar>
@@ -36,7 +34,7 @@
 				</vg-controls>
 			</videogular>
 		</div>
-		<div class="audio-wrap row" ng-if="feed.feed.audio">
+		<div class="audio-wrap" ng-if="feed.feed.audio">
 			<videogular vg-theme="feed.feed.audio.config.theme.url">
 					<vg-audio vg-src="feed.feed.audio.config.sources">
 					</vg-audio>

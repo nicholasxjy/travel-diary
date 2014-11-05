@@ -3,6 +3,7 @@ body {
 }
 .td-container {
 	margin-top: 64px;
+	padding-bottom: 30px;
 }
 .dropdown-caret {
 	position: absolute;
