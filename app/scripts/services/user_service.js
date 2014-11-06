@@ -12,7 +12,8 @@
         updateInfo: updateUserInfo,
         currentUser: currentUser,
         requestPasswordReset: requestPasswordReset,
-        logOut: logOut
+        logOut: logOut,
+        findUserById: findUserById
       };
       return userService;
       function signUp(info) {
@@ -54,7 +55,8 @@
         var deferred = $q.defer();
         var user = AV.User.current();
         var query = new AV.Query(AV.User);
-        query.equalTo('objectId', user.objectId);
+        console.log(user.id);
+        query.equalTo('objectId', user.id);
         query.find({
           success: function(users) {
             if (users && users.length > 0) {
@@ -101,6 +103,22 @@
           },
           error: function(error) {
             deferred.reject(error.message);
+          }
+        });
+        return deferred.promise;
+      }
+
+      function findUserById(id) {
+        var deferred = $q.defer();
+        var query = new AV.Query(AV.User);
+        query.equalTo('objectId', id);
+        query.find({
+          success: function(users) {
+            if (users && users.length > 0) {
+              deferred.resolve(users[0]);
+            } else {
+              deferred.reject('can not find user!');
+            }
           }
         });
         return deferred.promise;

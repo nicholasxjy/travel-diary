@@ -4,7 +4,8 @@
     .factory('FeedService', ['$http', '$q', function($http, $q) {
       var feedService = {
         create: create,
-        findAllFeed: findAllFeed
+        findAllFeed: findAllFeed,
+        findFeedByUser: findFeedByUser
       };
       return feedService;
 
@@ -65,6 +66,27 @@
         query.skip(skip);
         query.descending('createdAt');
         query.include('author');
+        query.find({
+          success: function(feeds) {
+            deferred.resolve(feeds);
+          },
+          error: function(error) {
+            deferred.reject(error.message);
+          }
+        });
+        return deferred.promise;
+      }
+
+      function findFeedByUser(user, currentPage) {
+        var deferred = $q.defer();
+        var page = currentPage || 1;
+        var skip = (page -1)*10;
+        var Feed = AV.Object.extend('Feed');
+        var query = new AV.Query(Feed);
+        query.equalTo('author', user);
+        query.limit(10);
+        query.skip(skip);
+        query.descending('createdAt');
         query.find({
           success: function(feeds) {
             deferred.resolve(feeds);

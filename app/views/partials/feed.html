@@ -6,7 +6,7 @@
 					<img ng-src="{{feed.author.avatar || 'images/default.jpg'}}" alt="author avatar" class="img-responsive img-circle">
 				</div>
 				<div class="author-name-wrap">
-					<div class="author-name">{{feed.author.username}}</div>
+					<div class="author-name"><a href="" ng-click="showUserIntro($index)">{{feed.author.username}}</a></div>
 					<div class="post-time">{{feed.feed.createdAt | date:'MM-dd HH:mm'}}</div>
 				</div>
 			</div>

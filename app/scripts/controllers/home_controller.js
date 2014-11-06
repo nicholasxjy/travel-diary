@@ -14,6 +14,12 @@
         ]);
 
         function homeCtrl($scope, ngDialog, $state, UserService, FeedService, $rootScope, $sce) {
+          UserService.currentUser()
+            .then(function(user) {
+              console.log(user);
+              $scope.currentUser = user;
+              console.log($scope.currentUser);
+            });
           //loadFeeds here
           loadFeeds(FeedService, 1, $sce);
           $scope.createNewFeed = function() {
@@ -22,10 +28,17 @@
                   controller: 'CreateNewFeedController'
               });
           };
-          UserService.currentUser()
-            .then(function(user) {
-              $scope.currentUser = user;
+          $scope.showUserIntro = function(index) {
+            var feed = $scope.feeds[index];
+            var author = feed.author;
+            console.log(author);
+            ngDialog.open({
+              template: 'views/partials/user-intro-card.html',
+              controller: ['$scope', function($scope) {
+                $scope.user = author;
+              }]
             });
+          }
           $scope.logOut = function() {
             UserService.logOut();
             $state.go('welcome');

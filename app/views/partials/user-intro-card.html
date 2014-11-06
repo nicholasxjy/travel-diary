@@ -1,0 +1,43 @@
+<div class="td-user-card">
+  <div class="user-card-inner">
+    <div class="user-card-top">
+      <div class="avatar-wrap">
+        <img ng-src="{{user.avatar}}" alt="user avatar" class="img-responsive img-circle">
+      </div>
+      <div class="name-wrap">
+        {{user.username}}
+      </div>
+      <div class="user-info-wrap">
+        <div class="gender-location">
+          <i class="fa fa-user"></i><span>{{user.gender}}</span>
+          <i class="fa fa-map-marker"></i><span>{{user.location}}</span>
+        </div>
+        <div class="profile">
+          {{user.profile}}
+        </div>
+      </div>
+    </div>
+    <div class="user-card-bottom">
+      <ul class="list-inline">
+        <li>
+          <a href="#">
+            <b>234</b><br>
+            <span>Posts</span>
+          </a>
+        </li>
+        <li>
+          <a ui-sref="user.followers">
+            <b>2850</b><br>
+            <span>Followers</span>
+          </a>
+        </li>
+        <li>
+          <a ui-sref="user.followings">
+            <b>675</b><br>
+            <span>Following</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
