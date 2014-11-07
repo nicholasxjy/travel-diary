@@ -49,51 +49,8 @@
 
 				<div class="user-feeds-wrap container">
 					<div class="row">
-						<div class="col-md-10 col-md-offset-1">
-							<div class="user-feed-item row">
-								<div class="col-sm-3 user-photo-wrap">
-									<img src="images/bg-auth.jpg" alt="" class="img-responsive">
-								</div>
-								<div class="col-sm-8 content-wrap">
-									<p>Last time we looked at components, which are the building blocks of any React-powered interface. Today we will continue to explore them, with a focus on how to customise them.</p>
-									<div class="like-comment-wrap">
-										<a href="#"><i class="fa fa-heart-o"></i></a>
-										<span class="like-count">123</span>
-										<a href="#" class="comment-link"><i class="fa fa-comment-o"></i></a>
-										<span class="comment-count">23</span>
-									</div>
-								</div>
-							</div>
-
-							<div class="user-feed-item row">
-								<div class="col-sm-3 user-photo-wrap">
-									<img src="images/bg-auth.jpg" alt="" class="img-responsive">
-								</div>
-								<div class="col-sm-8 content-wrap">
-									<p>Last time we looked at components, which are the building blocks of any React-powered interface. Today we will continue to explore them, with a focus on how to customise them.</p>
-									<div class="like-comment-wrap">
-										<a href="#"><i class="fa fa-heart-o"></i></a>
-										<span class="like-count">123</span>
-										<a href="#" class="comment-link"><i class="fa fa-comment-o"></i></a>
-										<span class="comment-count">23</span>
-									</div>
-								</div>
-							</div>
-
-							<div class="user-feed-item row">
-								<div class="col-sm-3 user-photo-wrap">
-									<img src="images/bg-auth.jpg" alt="" class="img-responsive">
-								</div>
-								<div class="col-sm-8 content-wrap">
-									<p>Last time we looked at components, which are the building blocks of any React-powered interface. Today we will continue to explore them, with a focus on how to customise them.</p>
-									<div class="like-comment-wrap">
-										<a href="#"><i class="fa fa-heart-o"></i></a>
-										<span class="like-count">123</span>
-										<a href="#" class="comment-link"><i class="fa fa-comment-o"></i></a>
-										<span class="comment-count">23</span>
-									</div>
-								</div>
-							</div>
+						<div class="col-md-10 col-md-offset-1" ng-repeat="feed in feeds">
+							<div ng-include="'views/partials/feed.html'"></div>
 						</div>
 					</div>
 				</div>
